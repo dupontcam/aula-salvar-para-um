@@ -21,7 +21,7 @@ public class PersonController {
     @Autowired
     private PersonService service;
 
-    @PostMapping
+    //@PostMapping
     public ResponseEntity<PersonDepartmentDTO> insert(@RequestBody PersonDepartmentDTO dto) {
         dto = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -29,7 +29,7 @@ public class PersonController {
         return ResponseEntity.created(uri).body(dto);
     }
 
-     @PostMapping
+    @PostMapping
     public ResponseEntity<PersonDTO> insert(@RequestBody PersonDTO dto) {
         dto = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
